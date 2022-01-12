@@ -4,22 +4,26 @@ pipeline {
         stage('clean stage') { 
             steps {
                 echo 'mvn clean'
+                bat 'mvn clean'
             }
         }
         stage(' validate stage ') { 
             steps {
                echo 'validating the application'
+               bat 'mvn validate'
             }
         }
 
         stage('compile stage') { 
             steps {
                 echo 'compiling the application'
+                bat 'mvn compile'
             }
         }
         stage('Testing stage') { 
             steps {
                 echo 'Testing the application'
+                bat 'mvn test'
             }
         }
         stage('Deploy stage') { 
